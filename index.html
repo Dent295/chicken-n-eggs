@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chicken 'n' Eggs</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Brush Script MT', cursive, sans-serif;
+      color: #b5bb6c;
+      min-height: 100vh;
+      position: relative;
+      background-color: #3e1c1b; /* Dark brown fallback */
+      overflow-x: hidden;
+    }
+
+    /* Background image */
+    .background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: url("./chickens.png") no-repeat center center;
+      filter: brightness(2.5); /* Adjust brightness */
+      z-index: -1; /* Ensures it stays in the background */
+      background-attachment: fixed; /* Background stays fixed during scroll */
+      background-size: cover; /* Default for smaller screens (mobile) */
+    }
+
+    /* For larger screens (tablets, desktops) */
+    @media (min-width: 768px) {
+      .background {
+        background-size: contain; /* Scale image without cropping */
+      }
+    }
+
+    /* Overlay for content */
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.6); /* Slight dark overlay */
+      padding: 2rem 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; /* Evenly space the items (h1 and buttons) */
+      align-items: center;
+      height: 100vh;
+      z-index: 1; /* Ensures it is above the background */
+    }
+
+    /* Title styles */
+    h1 {
+      font-size: 3rem;
+      color: #dde755;
+      text-shadow: 2px 2px 5px #3a1f00;
+      text-align: center;
+    }
+
+    /* Mobile contact section */
+    #mobile-contact {
+      margin-top: 1rem; /* Move buttons closer to the title */
+      width: 100%;
+    }
+
+    /* Button styles */
+    button {
+      display: block;
+      width: 90%;
+      max-width: 300px;
+      margin: 0.5rem auto; /* Add space between buttons */
+      padding: 1rem;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 8px;
+      /* background-color: rgba(255, 255, 255, 0); Transparent background */
+      background-color: rgba(255, 255, 255, 0); /* Fully transparent */
+
+      color: #dde755; /* Button text color matches the title color */
+      font-weight: bold;
+      cursor: pointer;
+      /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); */
+      transition: background 0.3s ease;
+      backdrop-filter: blur(2px); /* Optional enhancement */
+    }
+
+    button:hover {
+      background-color: rgba(255, 179, 102, 0.2); /* Slightly darker on hover */
+    }
+
+    /* Footer styles (commented out as per request) */
+    /* footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: rgba(0, 0, 0, 0.7);
+      color: #ffd9b3;
+      font-size: 0.9rem;
+    } */
+  </style>
+</head>
+<body>
+
+  <!-- Background image -->
+  <div class="background"></div>
+
+  <!-- Overlay content -->
+  <div class="overlay">
+    <h1>Chicken 'n' Eggs</h1>
+
+    <!-- Mobile contact section with buttons -->
+    <div id="mobile-contact">
+      <button onclick="window.location.href='tel:+263774443089'">
+        📞 Call Us: +263 77 444 3089
+      </button>
+      <button onclick="window.open('https://wa.me/+263774443089', '_blank')">
+        💬 Chat on WhatsApp
+      </button>
+    </div>
+  </div>
+
+  <!-- Footer (commented out) -->
+  <!-- <footer>
+    © 2025 Chicken 'n' Eggs
+  </footer> -->
+
+</body>
+</html>
